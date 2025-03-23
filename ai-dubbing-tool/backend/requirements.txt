@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-whisper
+git+https://github.com/openai/whisper.git
 googletrans==4.0.0rc1
 python-multipart
 stripe
