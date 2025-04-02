@@ -54,7 +54,9 @@ export default function Home() {
       <div className="bg-white rounded-2xl shadow-xl p-6 w-full max-w-2xl">
         <h1 className="text-3xl font-bold mb-4">AI Dubbing Tool 🎙️</h1>
 
-        <p className="mb-2 text-sm text-gray-500">Credits: <span className="font-semibold">{credits}</span></p>
+        <p className="mb-2 text-sm text-gray-500">
+          Credits: <span className="font-semibold">{credits}</span>
+        </p>
 
         <input
           type="file"
