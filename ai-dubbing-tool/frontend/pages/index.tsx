@@ -1,12 +1,19 @@
-import { useSession } from "next-auth/react";
-import { useEffect } from "react";
-import { syncUser } from "@/lib/syncUser";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useSession } from "next-auth/react";
+import { syncUser } from "../lib/syncUser"; // or "@/lib/syncUser" if alias is set
 
 const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 export default function Home() {
+    const { data: session } = useSession();
+
+  useEffect(() => {
+    if (session) {
+      syncUser(session);
+    }
+  }, [session]);
+  
   const [video, setVideo] = useState<File | null>(null);
   const [fileId, setFileId] = useState("");
   const [transcript, setTranscript] = useState("");
