@@ -1,1 +1,2 @@
-declare module "./lib/supabaseClient";
+declare module "lib/supabaseClient";
+
